@@ -13,10 +13,10 @@ This project implements and compares multiple machine learning algorithms to det
 
 ## 🚀 Key Features
 
-- **Multi-Algorithm Comparison**: Implements 8+ ML algorithms including ensemble methods and deep learning
+- **Multi-Algorithm Comparison**: Implements 7 ML algorithms including ensemble methods and dimensionality reduction
 - **Binary & Multi-class Classification**: Detects both attack vs. normal and specific attack types
 - **Feature Engineering**: Robust preprocessing with PCA dimensionality reduction
-- **High Accuracy**: Achieves 95%+ accuracy on test data with ensemble methods
+- **High Accuracy**: Achieves 87%+ test accuracy with ensemble methods
 - **Visualization**: Comprehensive confusion matrices and performance metrics
 
 ## 📊 Dataset
@@ -48,18 +48,17 @@ Python 3.10+
 
 ## 📈 Model Performance
 
-| Model               | Training Accuracy | Test Accuracy | Precision | Recall |
-| ------------------- | ----------------- | ------------- | --------- | ------ |
-| Random Forest       | 99.8%             | 97.2%         | 96.8%     | 97.5%  |
-| XGBoost             | 99.5%             | 96.8%         | 96.2%     | 97.1%  |
-| Neural Network      | 98.7%             | 96.5%         | 95.9%     | 96.8%  |
-| Decision Tree       | 99.9%             | 95.3%         | 94.8%     | 95.7%  |
-| SVM (Linear)        | 94.2%             | 93.8%         | 93.1%     | 94.2%  |
-| K-Nearest Neighbors | 96.1%             | 92.4%         | 91.8%     | 92.9%  |
-| Logistic Regression | 89.7%             | 89.3%         | 88.5%     | 89.8%  |
-| Naive Bayes         | 87.3%             | 86.9%         | 85.7%     | 87.4%  |
+| Model                    | Training Accuracy | Test Accuracy | Precision | Recall |
+| ------------------------ | ----------------- | ------------- | --------- | ------ |
+| Random Forest            | 99.82%            | 87.15%        | 81.85%    | 98.49% |
+| Decision Tree            | 99.82%            | 86.42%        | 82.50%    | 95.62% |
+| PCA Random Forest        | 99.82%            | 85.59%        | 80.52%    | 97.39% |
+| K-Nearest Neighbors      | 94.91%            | 85.70%        | 81.23%    | 96.28% |
+| SVM (Linear)             | 90.43%            | 81.66%        | 77.20%    | 94.65% |
+| Logistic Regression      | 88.09%            | 74.12%        | 69.25%    | 95.34% |
+| Naive Bayes              | 75.30%            | 73.97%        | 80.12%    | 70.12% |
 
-_Random Forest and XGBoost demonstrated superior performance for this intrusion detection task._
+_Random Forest demonstrated the best overall performance with 87.15% test accuracy and excellent recall (98.49%)._
 
 ## 🔧 Installation
 
@@ -154,12 +153,10 @@ print("Attack" if prediction[0] == 1 else "Normal")
 
 ### 3. Model Training
 
-Train and evaluate 8 different algorithms:
+Train and evaluate 7 different algorithms:
 
 - **Classical ML**: Logistic Regression, KNN, Naive Bayes, SVM
-- **Tree-based**: Decision Tree, Random Forest
-- **Boosting**: XGBoost
-- **Deep Learning**: Multi-layer Neural Network with dropout regularization
+- **Tree-based**: Decision Tree, Random Forest (including PCA-reduced variant)
 
 ### 4. Evaluation Metrics
 
@@ -199,7 +196,7 @@ Intrustion-Detection-System/
 ## 🧪 Key Findings
 
 1. **Ensemble Methods Win**: Random Forest and XGBoost significantly outperform other algorithms
-2. **PCA Impact**: Dimensionality reduction maintains 95%+ accuracy while reducing computation time
+2. **PCA Impact**: Dimensionality reduction maintains 85%+ accuracy while reducing computation time
 3. **Real-time Viability**: Linear SVM and Neural Networks offer good speed-accuracy tradeoffs for production
 
 ## 🔮 Future Enhancements
